@@ -50,7 +50,7 @@ h1, h2, h5 {
   border-top-right-radius: 12px;
   height: 200px;
   object-fit: cover;
-  object-position: center;
+  object-position: 40% center;
 }
 
 .card-title {
