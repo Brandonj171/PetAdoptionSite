@@ -1,1 +1,76 @@
+.chatbot-container {
+  width: 320px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.chat-header {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+#chat-toggle {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chat-box {
+  padding: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.bot-message {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-options button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-options button:hover {
+  background-color: #e0e0e0;
+}
+
+.user-message, .bot-response {
+  margin-top: 10px;
+}
+
+.user-message {
+  text-align: right;
+  color: #4caf50;
+}
+
+.bot-response {
+  text-align: left;
+  color: #333;
+}
 
