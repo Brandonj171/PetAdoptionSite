@@ -29,3 +29,4 @@
     </div>
   </div>
 </nav>
+<?php include 'chatbot.php'; ?>
