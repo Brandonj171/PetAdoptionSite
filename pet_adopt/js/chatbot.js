@@ -1,48 +1,48 @@
+const chatContainer = document.getElementById("chat-container");
 const chatBox = document.getElementById("chat-box");
-const faqOptions = document.getElementById("faq-options");
-const toggleBtn = document.getElementById("chat-toggle");
-const chatBoxContainer = document.querySelector(".chat-box");
+const userInput = document.getElementById("user-input");
+const pawsIcon = document.getElementById("paws-icon");
 
-chatBoxContainer.style.display = "none";
-toggleBtn.textContent = "+";
+// Show chat on dog click
+pawsIcon.addEventListener("click", () => {
+  chatContainer.style.display = (chatContainer.style.display === "none" || chatContainer.style.display === "") ? "block" : "none";
+});
 
-const faqs = {
-  "How do I adopt a pet?": "You can browse available pets on the homepage and click 'Adopt Me' to start the process.",
-  "Where are you located?": "We’re located in Troy, Alabama. Check the Contact page for more info.",
-  "How can I volunteer?": "Visit the Volunteer page to sign up and help out!",
-  "What are your adoption hours?": "We’re open Monday through Friday, 9am to 5pm.",
-  "Can I donate to the shelter?": "Yes! There will be a Donate page or you can contact us directly."
+const responses = {
+  adopt: "🐾 Woof! You can view pets on the homepage and click 'Adopt Me' to start!",
+  volunteer: "🐾 We love helpers! Visit the Volunteer page to learn how to get involved.",
+  donate: "🐾 Thank you! You can donate through the Donate page or contact us.",
+  location: "🐾 We're based in Troy, Alabama! Visit our Contact page for directions.",
+  hours: "🐾 We’re open Monday to Friday, 9am to 5pm!"
 };
 
+userInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    const input = userInput.value.trim();
+    if (!input) return;
+    appendMessage("user", input);
+    userInput.value = "";
 
-for (let question in faqs) {
-  const btn = document.createElement("button");
-  btn.textContent = question;
-  btn.addEventListener("click", () => handleQuestionClick(question));
-  faqOptions.appendChild(btn);
-}
+    const lowerInput = input.toLowerCase();
+    let response = "🐾 Hmm... I don't know that one yet! Try asking about adoption, volunteering, or hours.";
 
-function handleQuestionClick(question) {
-  const userMsg = document.createElement("div");
-  userMsg.className = "user-message";
-  userMsg.textContent = question;
-  chatBox.appendChild(userMsg);
+    for (let keyword in responses) {
+      if (lowerInput.includes(keyword)) {
+        response = responses[keyword];
+        break;
+      }
+    }
 
-  const botMsg = document.createElement("div");
-  botMsg.className = "bot-response";
-  botMsg.textContent = faqs[question];
-  chatBox.appendChild(botMsg);
-
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-
-toggleBtn.addEventListener("click", () => {
-  if (chatBoxContainer.style.display === "none") {
-    chatBoxContainer.style.display = "block";
-    toggleBtn.textContent = "−";
-  } else {
-    chatBoxContainer.style.display = "none";
-    toggleBtn.textContent = "+";
+    setTimeout(() => {
+      appendMessage("bot", response);
+    }, 600);
   }
 });
+
+function appendMessage(sender, message) {
+  const msg = document.createElement("div");
+  msg.className = sender + "-message";
+  msg.innerText = message;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
