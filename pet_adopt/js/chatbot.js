@@ -3,6 +3,9 @@ const faqOptions = document.getElementById("faq-options");
 const toggleBtn = document.getElementById("chat-toggle");
 const chatBoxContainer = document.querySelector(".chat-box");
 
+chatBoxContainer.style.display = "none";
+toggleBtn.textContent = "+";
+
 const faqs = {
   "How do I adopt a pet?": "You can browse available pets on the homepage and click 'Adopt Me' to start the process.",
   "Where are you located?": "We’re located in Troy, Alabama. Check the Contact page for more info.",
