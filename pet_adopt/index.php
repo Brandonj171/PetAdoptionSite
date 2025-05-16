@@ -69,7 +69,7 @@
       </div>
 
       <!-- Card 3: Support Our Mission -->
-      <div class="col-md-4 d-flex"><a class="card-anchor" href="#">
+      <div class="col-md-4 d-flex"><a class="card-anchor" href="donate.php">
         <div class="card h-100">
           <!-- Card image -->
           <img src="images/donate.png" class="card-img-top" alt="Donate to support">
