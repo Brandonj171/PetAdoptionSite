@@ -1,0 +1,66 @@
+.paws-chat-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+#paws-icon {
+  height: 100px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#paws-icon:hover {
+  transform: scale(1.1);
+}
+
+.chatbot-container {
+  display: none;
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+}
+
+.chat-header {
+  background-color: #77afa7;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-box {
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.bot-message, .user-message {
+  margin-bottom: 10px;
+}
+
+.user-message {
+  text-align: right;
+  color: #4caf50;
+}
+
+.bot-message {
+  color: #333;
+}
+
+#user-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+}
